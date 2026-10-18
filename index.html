@@ -7,12 +7,56 @@
 <title>我的个人主页</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f7f8f5;color:#243149;font-family:system-ui,"PingFang SC","Microsoft YaHei",sans-serif}.page{max-width:1080px;margin:auto;padding:0 32px;min-height:100svh;display:flex;flex-direction:column}header{padding:30px 0;border-bottom:1px solid #e0e4e7;display:flex;align-items:center;gap:12px;font-weight:650}.mark{background:#2463eb;color:white;border-radius:9px;padding:5px 10px;font-size:23px}main{flex:1;display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:40px;padding:75px 0}.hello{color:#2463eb;font-size:13px;letter-spacing:2px}h1{font-size:clamp(36px,5vw,56px);line-height:1.45;letter-spacing:-1px;margin:20px 0}h1 span{color:#2463eb}.intro{font-size:17px;line-height:1.95;color:#647185;max-width:470px;margin-bottom:30px}button{font:inherit;background:#2463eb;color:#fff;border:0;border-radius:9px;padding:16px 24px;cursor:pointer;display:inline-flex;gap:30px;align-items:center}button:hover{background:#174fc9}button:focus-visible{outline:3px solid #89acff;outline-offset:4px}.details{color:#647185;line-height:1.9;border-left:2px solid #a8c2ff;padding-left:16px;margin-top:24px}.art{display:grid;place-items:center;min-height:350px;position:relative}.orb{width:260px;height:260px;border-radius:50%;background:radial-gradient(circle at 28% 22%,#edf4ff,#a7c8ff 42%,#5087eb 75%,#285abd);box-shadow:0 30px 50px #3464b21a;position:relative}.orb:before{content:"";position:absolute;inset:32px -34px;border:1px solid #87a8de;border-radius:50%;transform:rotate(-35deg)}.orb:after{content:"✦";color:white;font-size:48px;position:absolute;top:62px;left:100px}.caption{position:absolute;bottom:0;font-size:12px;color:#71829a;letter-spacing:3px}footer{padding:26px 0;border-top:1px solid #e0e4e7;font-size:12px;color:#758297;display:flex;justify-content:space-between;gap:15px}@media(max-width:700px){.page{padding:0 24px}main{grid-template-columns:1fr;padding:45px 0;gap:30px}.art{min-height:270px}.orb{width:200px;height:200px}.orb:after{top:45px;left:74px;font-size:40px}h1{font-size:37px}.intro{font-size:16px}footer{font-size:11px;line-height:1.7}}
+
+/* 个人介绍与自适应布局 */
+html{scroll-behavior:smooth}
+body{background:#f7f9ff}
+.page{max-width:1120px}
+main{display:block;padding:0}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:40px;padding:76px 0 64px}
+.section{scroll-margin-top:24px;margin-bottom:32px;padding:38px;background:#fff;border:1px solid #e1e9f7;border-radius:24px;box-shadow:0 12px 36px #244b8210}
+.section-label{margin:0 0 8px;color:#2463eb;font-size:13px;font-weight:650;letter-spacing:2px}
+h2{font-size:28px;letter-spacing:-.5px;margin:0 0 16px}
+.about-layout{display:grid;grid-template-columns:170px 1fr;gap:36px;align-items:center}
+.avatar-frame{margin:0;text-align:center}
+.avatar{display:block;width:144px;height:144px;margin:auto;border-radius:50%;border:6px solid #fff;outline:1px solid #dce7fc;background:#eaf1ff;box-shadow:0 10px 24px #2463eb14}
+.avatar-frame figcaption{margin-top:14px;color:#647185;font-size:12px}
+.about-copy p{color:#647185;line-height:1.95;margin:0 0 16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.tags li{padding:6px 12px;border-radius:50px;background:#eff5ff;color:#2556ac;font-size:13px}
+.interests-heading{margin-bottom:26px}
+.interests-heading p:last-child{color:#647185;line-height:1.8;margin:0}
+.interest-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.interest{padding:24px;border:1px solid #e1e9f7;border-radius:18px;background:linear-gradient(145deg,#f5f8ff,#fff)}
+.interest-icon{width:44px;height:44px;display:grid;place-items:center;background:#e7efff;color:#2463eb;border-radius:13px;margin-bottom:22px}
+.interest-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+h3{font-size:18px;margin:0 0 10px}
+.interest p{font-size:14px;line-height:1.9;color:#647185;margin:0}
+button{min-height:52px;transition:background .2s,box-shadow .2s}
+button:hover{box-shadow:0 6px 18px #2463eb25}
+footer{margin-top:20px}
+@media(max-width:700px){
+.page{padding:0 20px}header{padding:24px 0}
+.hero{grid-template-columns:1fr;padding:42px 0 36px;gap:24px}
+.section{padding:26px 22px;border-radius:20px;margin-bottom:22px}
+.about-layout{grid-template-columns:1fr;gap:26px}
+.avatar{width:128px;height:128px}
+.about-copy{text-align:center}.tags{justify-content:center}
+.interest-grid{grid-template-columns:1fr;gap:12px}
+.interest{padding:22px}.interest-icon{margin-bottom:16px}
+h1{font-size:clamp(30px,8.4vw,42px)}h2{font-size:25px}
+footer{flex-wrap:wrap;padding:24px 0}
+}
+@media(min-width:701px) and (max-width:900px){.orb{width:220px;height:220px}.orb:before{inset:32px -12px}.orb:after{top:50px;left:82px;font-size:44px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button{transition:none}}
+
 </style>
 </head>
 <body>
 <div class="page">
 <header><span class="mark" aria-hidden="true">✦</span>我的个人主页</header>
 <main>
+<div class="hero">
 <section aria-labelledby="welcome">
 <p class="hello">很高兴在这里遇见你</p>
 <h1 id="welcome">你好，<br>欢迎来到<span>我的主页。</span></h1>
@@ -22,6 +66,29 @@
 <p id="about" class="details" hidden>对我而言，成长来自每一次尝试，灵感藏在每一个平凡的日子里。希望在这里，与你一起探索更多可能。</p>
 </section>
 <div class="art" aria-hidden="true"><div class="orb"></div><span class="caption">保持好奇，慢慢生长。</span></div>
+</div>
+
+<section class="section about-layout" aria-labelledby="about-title">
+<figure class="avatar-frame">
+<img class="avatar" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20160%20160%22%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20fill%3D%22%23eaf1ff%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2260%22%20r%3D%2227%22%20fill%3D%22%238cb1f5%22%2F%3E%3Cpath%20d%3D%22M24%20160v-17a56%2056%200%200%201%20112%200v17%22%20fill%3D%22%234b80df%22%2F%3E%3Ccircle%20cx%3D%22130%22%20cy%3D%2230%22%20r%3D%227%22%20fill%3D%22%23c8dafa%22%2F%3E%3Ccircle%20cx%3D%2226%22%20cy%3D%2244%22%20r%3D%224%22%20fill%3D%22%23c8dafa%22%2F%3E%3C%2Fsvg%3E" width="144" height="144" alt="蓝色人物剪影个人头像占位图">
+<figcaption>我的头像 · 期待与你相识</figcaption>
+</figure>
+<div class="about-copy">
+<p class="section-label">在这里，认识我</p>
+<h2 id="about-title">关于我</h2>
+<!-- 以下为示例介绍和兴趣，可替换为自己的真实信息。 -->
+<p>带着好奇心认识世界，也用心感受生活。我希望把学习中的收获、日常里的发现，慢慢记录在这里，让每一次小小的尝试，都成为成长的一部分。</p>
+<ul class="tags" aria-label="个人标签"><li>保持好奇</li><li>热爱生活</li><li>持续学习</li></ul>
+</div>
+</section>
+<section class="section" aria-labelledby="interests-title">
+<div class="interests-heading"><p class="section-label">生活里的小小热爱</p><h2 id="interests-title">我的兴趣爱好</h2><p>在喜欢的事情里，发现日常的更多可能。</p></div>
+<div class="interest-grid">
+<article class="interest"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5C8 2 3 4 3 4v15s5-2 9 1c4-3 9-1 9-1V4s-5-2-9 1v15"/></svg></span><h3>阅读与学习</h3><p>翻开一本书，探索一个新想法。在文字与知识之间，让好奇心继续生长。</p></article>
+<article class="interest"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="15" rx="3"/><path d="m8 6 2-3h4l2 3"/><circle cx="12" cy="13" r="4"/></svg></span><h3>记录与发现</h3><p>留意光影，也收藏生活的小片段。用照片和文字，留住值得回味的瞬间。</p></article>
+<article class="interest"><span class="interest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m2 20 7-13 5 8 3-5 5 10H2Z"/><path d="m6 13 3 2 3-3"/><circle cx="18" cy="4" r="2"/></svg></span><h3>散步与探索</h3><p>走进自然，也走进街角的小巷。在慢下来的脚步里，感受生活的温度。</p></article>
+</div>
+</section>
 </main>
 <footer><span>© 2026 我的个人主页</span><span>把日常，过成喜欢的模样。</span></footer>
 </div>
@@ -31,3 +98,4 @@ button.addEventListener('click',()=>{const expanded=button.getAttribute('aria-ex
 </script>
 </body>
 </html>
+
